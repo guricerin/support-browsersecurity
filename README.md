@@ -6,9 +6,14 @@
 Docker Composeを利用できる場合には、以下の要領でDockerイメージをビルドおよび起動することでも利用可能です。
 
 ```shell
-$ sudo docker-compose build
-$ sudo docker-compose up -d
+sudo docker compose build
+sudo docker compose up -d
 ```
+
+- Docker Composeを利用した場合は以下のURLでトップページにアクセス可能です。
+  ```
+  http://localhost:10000/
+  ```
 
 ## 書籍について
 
