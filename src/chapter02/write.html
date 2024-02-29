@@ -6,9 +6,9 @@
   <input type="hidden" name="test" value="test">
   <input type="submit">
 </form>
-  
 <p id="result01"></p>
 <p id="result02"></p>
+<p id="result03"></p>
 <script>
   fetch("http://localhost:10000/chapter02/resource.html", { headers: { "X-CUSTOM-HEADER": "value" } }).then(() => {
     document.getElementById("result01").innerText = "#1 succeeded.";
@@ -19,5 +19,12 @@
     document.getElementById("result02").innerText = "#2 succeeded.";
   }).catch(() => {
     document.getElementById("result02").innerText = "#2 failed.";
+  });
+
+  // Hostは書き換えられません
+  fetch("http://localhost:20000/chapter02/resource.html", { headers: { "Host": "localhost:10000", "Origin": "http://localhost:10000", "X-CUSTOM-HEADER": "value" } }).then(() => {
+    document.getElementById("result03").innerText = "#3 succeeded.";
+  }).catch(() => {
+    document.getElementById("result03").innerText = "#3 failed.";
   });
 </script>
